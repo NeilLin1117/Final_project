@@ -11,6 +11,7 @@ import org.junit.Test;
 
 import junit.framework.Assert;
 import pair16SourceCode.GradeSystems;
+import pair16SourceCode.NoSuchCommandExceptions;
 
 
 public class TestUpdateWeights {
@@ -25,7 +26,7 @@ public class TestUpdateWeights {
 	}
 	
 	@Test
-	public void test_UpdateWeights_1() {
+	public void test_UpdateWeights_1() throws NoSuchCommandExceptions {
 		inContent = new ByteArrayInputStream("20\n20\n20\n20\n20\nY\n".getBytes());
 		System.setIn(inContent);
 		aTree.updateWeights();
@@ -54,7 +55,7 @@ public class TestUpdateWeights {
 	}
 	
 	@Test
-	public void test_UpdateWeights_2() {
+	public void test_UpdateWeights_2() throws NoSuchCommandExceptions {
 		inContent = new ByteArrayInputStream("0\n10\n10\n40\n40\nY\n".getBytes());
 		System.setIn(inContent);
 		aTree.updateWeights();
@@ -83,7 +84,7 @@ public class TestUpdateWeights {
 	}
 	
 	@Test
-	public void test_UpdateWeights_3() {
+	public void test_UpdateWeights_3() throws NoSuchCommandExceptions {
 		inContent = new ByteArrayInputStream("30\n30\n10\n15\n15\nY\n".getBytes());
 		System.setIn(inContent);
 		aTree.updateWeights();
