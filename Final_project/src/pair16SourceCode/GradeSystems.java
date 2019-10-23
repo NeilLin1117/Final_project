@@ -154,7 +154,7 @@ public class GradeSystems {
 		System.out.print(aGrade.name + "排名第" + rank + "\n");
 		return true;
 	}
-	public boolean updateWeights() {
+	public boolean updateWeights() throws NoSuchCommandExceptions {
 		Scanner scan = new Scanner(System.in);
 		int lab1, lab2, lab3, mid, fin;
 		System.out.print("舊配分" + "\n" + 
@@ -195,8 +195,11 @@ public class GradeSystems {
 			
 			return true;
 		}
-		else {
+		else if (answer == 'N'){
 			return false;
+		}
+		else {
+			throw new NoSuchCommandExceptions("指令錯了!");
 		}
 	}
 }
